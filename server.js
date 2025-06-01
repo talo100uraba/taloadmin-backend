@@ -13,7 +13,7 @@ const PORT = process.env.PORT || 3000;
 // En producción, reemplaza origin: true por tu dominio de GitHub Pages:
 // origin: 'https://talo100uraba.github.io'
 app.use(cors({
-  origin: true,               // para desarrollo permite cualquier origen
+  origin: 'https://talo100uraba.github.io', // tu dominio de GitHub Pages
   methods: ['GET','POST','PUT','DELETE'],
   allowedHeaders: ['Content-Type','Authorization'],
   credentials: true
