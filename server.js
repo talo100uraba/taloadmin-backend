@@ -19,8 +19,9 @@ app.use(cors({
   credentials: true
 }));
 
-// ----------  Middleware para parsear JSON  ----------
-app.use(express.json());
+// ----------  Middleware para parsear JSON con límite aumentado a 10mb  ----------
+app.use(express.json({ limit: '10mb' }));
+app.use(express.urlencoded({ limit: '10mb', extended: true }));
 
 // ----------  Conexión a MongoDB Atlas  ----------
 const MONGODB_URI = process.env.MONGODB_URI;
