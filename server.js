@@ -273,3 +273,12 @@ app.listen(PORT, () => {
   console.log(`Servidor TALØ Admin corriendo en puerto ${PORT}`);
   console.log(`POST http://localhost:${PORT}/login   para obtener token JWT`);
 });
+app.get('/api/products', async (req,res)=>{
+  try{
+    const products = await Product.find().sort({fechaCreacion:-1});
+    res.json(products);
+  }catch(e){
+    res.status(500).json({error:'Error al obtener productos.'});
+  }
+});
+
